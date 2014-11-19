@@ -1,3 +1,4 @@
+% This code is no necessary, run challenge.m directly.
 fid = fopen('Records','r');
 c = textscan(fid,'%s');
 for i=1:length(c{1})
