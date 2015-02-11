@@ -21,7 +21,7 @@ else
     error('Could not open users answer.txt for scoring. Run the generateValidationSet.m script and try again.')
 end
 
-fid=fopen(['challenge' filesep 'ALARMS'],'r');
+fid=fopen(['ALARMS'],'r');
 if(fid ~= -1)
     GOLD=textscan(fid,'%s %s %d','Delimiter',',');
     fclose(fid);

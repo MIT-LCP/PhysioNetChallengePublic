@@ -80,10 +80,13 @@ N=[];
 N0=[];
 abp_ind=get_index(description,'ABP');
 ann_abp=[];
+features=[];
+BEATQ=[];
+R=[];
 if(~isempty(abp_ind))
    ann_abp=wabp(signal(:,abp_ind),0,1);
    % Analyze the signal quality index of ABP using jSQI
-   if ~isempty(ann_abp)
+   if length(ann_abp)>=3 % at least 3 abp beats detected
         [features] = abpfeature(signal(:,abp_ind),ann_abp);
         [BEATQ R] = jSQI(features, ann_abp, signal(:,abp_ind));
    end
